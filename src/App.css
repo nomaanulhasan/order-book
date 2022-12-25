@@ -1,0 +1,134 @@
+:root {
+  --lightTH: rgba(255, 255, 255, 0.8);
+  --lightTD: rgba(255, 255, 255, 0.9);
+  --darkTH: rgba(0, 0, 0, 0.8);
+  --darkTD: rgba(0, 0, 0, 0.9);
+
+  --green: #09a96a;
+  --red: #f3364e;
+
+  --containerWidth: 280px;
+  --borderRadius: 0.25rem;
+  --rowHeight: 1rem;
+
+  --fontSizeSM: 0.75rem;
+  --fontSizeMD: 0.875rem;
+  --fontSizeLG: 1rem;
+
+  --spacingSM: 0.125rem;
+  --spacingMD: 0.5rem;
+  --spacingLG: 1rem;
+
+  --controlsSize: 1.75rem;
+  --controlsBorder: rgba(0, 0, 0, 0.25);
+  --controlsBG: rgba(0, 0, 0, 0.125);
+}
+
+body {
+  background-color: var(--lightTD);
+}
+
+.orderBookApp {
+  font: normal var(--fontSizeMD) arial, sans-serif;
+  width: var(--containerWidth);
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0 auto;
+}
+.orderBookApp .title {
+  font-size: var(--fontSizeLG);
+  margin: 0 0 var(--spacingLG);
+  color: var(--darkTD);
+  text-align: left;
+  padding: 0;
+}
+
+.dataControls {
+  justify-content: space-between;
+  margin-bottom: var(--spacingLG);
+  align-items: center;
+  display: flex;
+}
+.dataControls .buttons {
+  gap: var(--spacingMD);
+  display: flex;
+}
+.dataControls button {
+  background-color: var(--controlsBG);
+  border-radius: var(--borderRadius);
+  height: var(--controlsSize);
+  width: var(--controlsSize);
+  padding: var(--spacingSM);
+  justify-content: center;
+  color: var(--darkTD);
+  align-items: center;
+  /* cursor: pointer; */
+  cursor: not-allowed;
+  display: flex;
+  border: none;
+}
+.dataControls .ddl select {
+  border: 1px solid var(--controlsBorder);
+  background-color: var(--controlsBG);
+  border-radius: var(--borderRadius);
+  height: var(--controlsSize);
+  padding: 0 var(--spacingSM);
+  color: var(--darkTD);
+  cursor: not-allowed;
+  display: block;
+}
+
+.orderBookTable {
+  font-size: var(--fontSizeSM);
+  width: 100%;
+}
+.orderBookTable th,
+.orderBookTable td {
+  line-height: var(--rowHeight);
+  width: calc(100% / 3);
+  text-align: right;
+}
+.orderBookTable th:first-of-type,
+.orderBookTable td:first-of-type {
+  text-align: left;
+}
+.orderBookTable th {
+  color: var(--darkTH);
+}
+.orderBookTable td {
+  color: var(--darkTD);
+}
+.orderBookTable .midRow,
+.orderBookTable .emptyRow {
+  font-size: var(--fontSizeMD);
+  padding: var(--spacingLG) 0;
+  font-weight: bold;
+}
+.orderBookTable .emptyRow {
+  font-size: var(--fontSizeSM);
+  text-align: center;
+  color: var(--red);
+}
+
+.greenText {
+  color: var(--green) !important;
+}
+.redText {
+  color: var(--red) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lightTH: rgba(0, 0, 0, 0.8);
+    --lightTD: rgba(0, 0, 0, 0.9);
+    --darkTH: rgba(255, 255, 255, 0.8);
+    --darkTD: rgba(255, 255, 255, 0.9);
+
+    --controlsBorder: rgba(255, 255, 255, 0.25);
+    --controlsBG: rgba(255, 255, 255, 0.125);
+  }
+
+  body {
+    background-color: var(--darkTD);
+  }
+}
